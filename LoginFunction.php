@@ -1,5 +1,4 @@
 <?php
-
 // die("hit");
 session_start();
 
@@ -21,10 +20,9 @@ if ($row = mysqli_fetch_assoc($result))
 		/* If the creditials are correct, start session, and the session. */
 		$_SESSION['email'] = $email;
 		$_SESSION['type'] = $row['type'];
-		$duration = -3600; 
-		$duration = 30* 60 * 60 * 24 ; 
-		setcookie("email", $email, time() + $duration,"/");
-		setcookie("password", $password, time() + $duration,"/");
+		$duration = 30 * 60 * 60 * 24 ; 
+		setcookie("email", $email, time() + $duration,'/');
+		setcookie("password", $password, time() + $duration,'/');
 		header('Location: Home.php');
 	}
 	else
